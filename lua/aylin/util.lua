@@ -45,7 +45,7 @@ function util.load()
   end
   -- vim.o.background = "dark"
   vim.o.termguicolors = true
-  vim.g.colors_name = "ayline
+  vim.g.colors_name = "aylin"
 
   -- load the most importaint parts of the theme
   local editor = aylin.loadEditor()
