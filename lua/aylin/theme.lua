@@ -46,7 +46,7 @@ theme.loadSyntax = function ()
     markdownH1Delimiter = { fg = aylin.aylin_d_gray, },
     markdownH2Delimiter = { fg = aylin.aylin_d_gray },
     markdownH3Delimiter = { fg = aylin.aylin_d_gray },
-  },
+  }
   return syntax
 end
 
@@ -124,6 +124,7 @@ theme.loadEditor = function ()
     BufferLineIndicatorSelected = { fg = aylin.aylin_black },
     BufferLineFill = { bg = aylin.aylin_black },
   }
+  return editor
 end
 
 theme.loadTerminal = function()
@@ -198,8 +199,7 @@ theme.loadTreeSitter = function()
     TSStringRegex = {fg = aylin.aylin_green},
     TSStringEscape = {fg = aylin.aylin_marzipan},
     TSCharacter = {fg = aylin.aylin_green},
-
-	}
+  }
   return treesitter
 end
 
