@@ -1,9 +1,9 @@
 lua << EOF
-package.loaded['nord'] = nil
-package.loaded['nord.util'] = nil
-package.loaded['nord.colors'] = nil
-package.loaded['nord.theme'] = nil
-package.loaded['nord.functions'] = nil
+package.loaded['aylin'] = nil
+package.loaded['aylin.util'] = nil
+package.loaded['aylin.colors'] = nil
+package.loaded['aylin.theme'] = nil
+package.loaded['aylin.functions'] = nil
 
-require('nord').set()
+require('aylin').set()
 EOF
