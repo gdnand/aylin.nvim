@@ -3,5 +3,5 @@ This is for my personal use, I don't recommend anyone to use this in it's curren
 Feel free to use this if you *do* like it!
 
 # Special Thanks to
-[aylin.vim](https://github.com/AhmedAbdulrahman/aylin.vim) for the palette and the name!
+[aylin.vim](https://github.com/AhmedAbdulrahman/aylin.vim) for the palette and the name!\n
 [nord.nvim](https://github.com/shaunsingh/nord.nvim) for the template!
