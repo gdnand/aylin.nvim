@@ -76,13 +76,13 @@ theme.loadEditor = function ()
     NonText = { fg = aylin.aylin_d_gray },
     Pmenu = { fg = aylin.aylin_l_white, bg = aylin.aylin_black },
     PmenuSel = { fg = aylin.aylin_l_white, bg = aylin.aylin_turquoise },
-    PmenuSbar = { fg = aylin.aylin_l_white, bg = nord.nord2_gui },
-    PmenuThumb = { fg = aylin.aylin_l_white, bg = nord.nord4_gui },
-    Question = { fg = nord.nord14_gui },
+    PmenuSbar = { fg = aylin.aylin_l_white, bg = aylin.aylin_black },
+    PmenuThumb = { fg = aylin.aylin_l_white, bg = aylin.aylin_d_gray },
+    Question = { fg = aylin.aylin_green },
     QuickFixLine = { fg = aylin.aylin_l_white, bg = aylin.none, style = "reverse" },
     qfLineNr = { fg = aylin.aylin_l_white, bg = aylin.none, style = "reverse" },
     Search = { fg = aylin.aylin_turquoise, bg = aylin.aylin_l_white, style = "reverse" },
-    SpecialKey = { fg = aylin.aylin_l_sky}
+    SpecialKey = { fg = aylin.aylin_l_sky},
     SpellBad = { fg = aylin.aylin_pink, bg = aylin.none, style = "italic,undercurl" },
     SpellCap = { fg = aylin.aylin_l_sky, bg = aylin.none, style = "italic,undercurl" },
     SpellLocal = { fg = aylin.aylin_sky, bg = aylin.none, style = "italic,undercurl" },
@@ -116,12 +116,198 @@ theme.loadEditor = function ()
 
     -- dashboard
     DashboardShortCut = { fg = aylin.aylin_sky },
-    DashboardHeader = { fg = aylin.aylin_ },
-    DashboardCenter = { fg = nord.nord8_gui },
-    DashboardFooter = { fg = nord.nord14_gui, style = "italic" },
+    DashboardHeader = { fg = aylin.aylin_l_sky },
+    DashboardCenter = { fg = aylin.aylin_aubergine },
+    DashboardFooter = { fg = aylin.aylin_green, style = "italic" },
 
     -- BufferLine
-    BufferLineIndicatorSelected = { fg = nord.nord0_gui },
-    BufferLineFill = { bg = nord.nord0_gui },
+    BufferLineIndicatorSelected = { fg = aylin.aylin_black },
+    BufferLineFill = { bg = aylin.aylin_black },
   }
 end
+
+theme.loadTerminal = function()
+  vim.g.terminal_color_0 = aylin.aylin_black
+  vim.g.terminal_color_1 = aylin.aylin_pink
+  vim.g.terminal_color_2 = aylin.aylin_green
+  vim.g.terminal_color_3 = aylin.aylin_sap
+  vim.g.terminal_color_4 = aylin.aylin_turquoise
+  vim.g.terminal_color_5 = aylin.aylin_purple
+  vim.g.terminal_color_6 = aylin.aylin_l_sky
+  vim.g.terminal_color_7 = aylin.aylin_l_white
+  vim.g.terminal_color_8 = aylin.aylin_black
+  vim.g.terminal_color_9 = aylin.aylin_pink
+  vim.g.terminal_color_10 = aylin.aylin_green
+  vim.g.terminal_color_11 = aylin.aylin_sap
+  vim.g.terminal_color_12 = aylin.aylin_sky
+  vim.g.terminal_color_13 = aylin.aylin_purple
+  vim.g.terminal_color_14 = aylin.aylin_l_sky
+  vim.g.terminal_color_15 = aylin.aylin_l_white
+end
+
+theme.loadTreeSitter = function()
+  local treesitter = {
+    TSAnnotation = { fg = aylin.aylin_marzipan }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
+    TSConstructor = { fg = aylin.aylin_turquoise }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConstant = { fg = aylin.aylin_sap }, -- For constants
+    TSFloat = { fg = aylin.aylin_purple }, -- For floats
+    TSNumber = { fg = aylin.aylin_purple }, -- For all number
+
+    TSAttribute = { fg = aylin.aylin_purple }, -- (unstable) TODO: docs
+    TSVariable = { fg = aylin.aylin_l_white, style = "bold" }, -- Any variable name that does not have another highlight.
+    TSVariableBuiltin = { fg = aylin.aylin_sap, style = "bold" },
+    TSBoolean = { fg = aylin.aylin_sky, style = "bold" }, -- For booleans.
+    TSConstBuiltin = { fg = aylin.aylin_sap, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro = { fg = aylin.aylin_marzipan, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
+    TSError = { fg = aylin.aylin_pink }, -- For syntax/parser errors.
+    TSException = { fg = aylin.aylin_purple }, -- For exception related keywords.
+    TSFuncMacro = { fg = aylin.aylin_l_sky }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSInclude = { fg = aylin.aylin_turquoise }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSLabel = { fg = aylin.aylin_marzipan }, -- For labels: `label:` in C and `:label:` in Lua.
+    TSOperator = { fg = aylin.aylin_sap }, -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter = { fg = aylin.aylin_aubergine }, -- For parameters of a function.
+    TSParameterReference = { fg = aylin.aylin_turquoise }, -- For references to parameters of a function.
+    TSPunctDelimiter = { fg = aylin.aylin_l_black }, -- For delimiters ie: `.`
+    TSPunctBracket = { fg = aylin.aylin_l_black }, -- For brackets and parens.
+    TSPunctSpecial = { fg = aylin.aylin_l_black }, -- For special punctutation that does not fall in the catagories before.
+    TSSymbol = { fg = aylin.aylin_purple }, -- For identifiers referring to symbols or atoms.
+    TSType = { fg = aylin.aylin_sky}, -- For types.
+    TSTypeBuiltin = { fg = aylin.aylin_sky }, -- For builtin types.
+    TSTag = { fg = aylin.aylin_aubergine}, -- Tags like html tag names.
+    TSTagDelimiter = { fg = aylin.aylin_l_black }, -- Tag delimiter like `<` `>` `/`
+    TSText = { fg = aylin.aylin_l_white }, -- For strings considenord11_gui text in a markup language.
+    TSTextReference = { fg = aylin.aylin_pink }, -- FIXME
+    TSEmphasis = { fg = aylin.aylin_l_sky }, -- For text to be represented with emphasis.
+    TSUnderline = { fg = aylin.aylin_l_white, bg = aylin.none, style = "underline" }, -- For text to be represented with an underline.
+    TSTitle = { fg = aylin.aylin_turquoise, bg = aylin.none, style = "bold" }, -- Text that is part of a title.
+    TSLiteral = { fg = aylin.aylin_green }, -- Literal text.
+    TSURI = { fg = aylin.aylin_purple }, -- Any URI like a link or email.
+    TSComment = {fg = aylin.aylin_d_gray},
+    TSConditional = {fg = aylin.aylin_marzipan},
+    TSFunction = {fg = aylin.aylin_turquoise},
+    TSMethod = {fg = aylin.aylin_turquoise},
+    TSFuncBuiltin = {fg = aylin.aylin_turquoise},
+    TSNamespace = {fg = aylin.aylin_sap},
+    TSField = {fg = aylin.aylin_aubergine},
+    TSProperty = {fg = aylin.aylin_aubergine},
+    TSKeyword = {fg = aylin.aylin_marzipan},
+    TSKeywordFunction = {fg = aylin.aylin_sky}, -- like sizeof i guess...
+    TSKeywordReturn = {fg = aylin.aylin_pink},
+    TSKeywordOperator = {fg = aylin.aylin_sky},
+    TSString = {fg = aylin.aylin_green},
+    TSStringRegex = {fg = aylin.aylin_green},
+    TSStringEscape = {fg = aylin.aylin_marzipan},
+    TSCharacter = {fg = aylin.aylin_green},
+
+	}
+  return treesitter
+end
+
+theme.loadLSP = function()
+
+  local lsp = {
+    LspDiagnosticsDefaultError = { fg = aylin.aylin_pink }, -- used for "Error" diagnostic virtual text
+    LspDiagnosticsSignError = { fg = aylin.aylin_pink }, -- used for "Error" diagnostic signs in sign column
+    LspDiagnosticsFloatingError = { fg = aylin.aylin_pink }, -- used for "Error" diagnostic messages in the diagnostics float
+    LspDiagnosticsVirtualTextError = { fg = aylin.aylin_pink }, -- Virtual text "Error"
+    LspDiagnosticsUnderlineError = { style = "undercurl", sp = aylin.aylin_pink }, -- used to underline "Error" diagnostics.
+    LspDiagnosticsDefaultWarning = { fg = aylin.aylin_purple }, -- used for "Warning" diagnostic signs in sign column
+    LspDiagnosticsSignWarning = { fg = aylin.aylin_purple }, -- used for "Warning" diagnostic signs in sign column
+    LspDiagnosticsFloatingWarning = { fg = aylin.aylin_purple }, -- used for "Warning" diagnostic messages in the diagnostics float
+    LspDiagnosticsVirtualTextWarning = { fg = aylin.aylin_purple }, -- Virtual text "Warning"
+    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = aylin.aylin_purple }, -- used to underline "Warning" diagnostics.
+    LspDiagnosticsDefaultInformation = { fg = aylin.aylin_turquoise }, -- used for "Information" diagnostic virtual text
+    LspDiagnosticsSignInformation = { fg = aylin.aylin_turquoise }, -- used for "Information" diagnostic signs in sign column
+    LspDiagnosticsFloatingInformation = { fg = aylin.aylin_turquoise }, -- used for "Information" diagnostic messages in the diagnostics float
+    LspDiagnosticsVirtualTextInformation = { fg = aylin.aylin_turquoise }, -- Virtual text "Information"
+    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = aylin.aylin_turquoise }, -- used to underline "Information" diagnostics.
+    LspDiagnosticsDefaultHint = { fg = aylin.aylin_l_sky }, -- used for "Hint" diagnostic virtual text
+    LspDiagnosticsSignHint = { fg = aylin.aylin_l_sky }, -- used for "Hint" diagnostic signs in sign column
+    LspDiagnosticsFloatingHint = { fg = aylin.aylin_l_sky }, -- used for "Hint" diagnostic messages in the diagnostics float
+    LspDiagnosticsVirtualTextHint = { fg = aylin.aylin_l_sky }, -- Virtual text "Hint"
+    LspDiagnosticsUnderlineHint = { style = "undercurl", sp = aylin.aylin_turquoise }, -- used to underline "Hint" diagnostics.
+    LspReferenceText = { fg = aylin.aylin_l_white, bg = aylin.aylin_black }, -- used for highlighting "text" references
+    LspReferenceRead = { fg = aylin.aylin_l_white, bg = aylin.aylin_black }, -- used for highlighting "read" references
+    LspReferenceWrite = { fg = aylin.aylin_l_white, bg = aylin.aylin_black }, -- used for highlighting "write" references
+
+    DiagnosticError = { link = "LspDiagnosticsDefaultError" },
+    DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
+    DiagnosticInfo = { link = "LspDiagnosticsDefaultInformation" },
+    DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
+    DiagnosticVirtualTextWarn = { link = "LspDiagnosticsVirtualTextWarning" },
+    DiagnosticUnderlineWarn = { link = "LspDiagnosticsUnderlineWarning" },
+    DiagnosticFloatingWarn = { link = "LspDiagnosticsFloatingWarning" },
+    DiagnosticSignWarn = { link = "LspDiagnosticsSignWarning" },
+    DiagnosticVirtualTextError = { link = "LspDiagnosticsVirtualTextError" },
+    DiagnosticUnderlineError = { link = "LspDiagnosticsUnderlineError" },
+    DiagnosticFloatingError = { link = "LspDiagnosticsFloatingError" },
+    DiagnosticSignError = { link = "LspDiagnosticsSignError" },
+    DiagnosticVirtualTextInfo = { link = "LspDiagnosticsVirtualTextInformation" },
+    DiagnosticUnderlineInfo = { link = "LspDiagnosticsUnderlineInformation" },
+    DiagnosticFloatingInfo = { link = "LspDiagnosticsFloatingInformation" },
+    DiagnosticSignInfo = { link = "LspDiagnosticsSignInformation" },
+    DiagnosticVirtualTextHint = { link = "LspDiagnosticsVirtualTextHint" },
+    DiagnosticUnderlineHint = { link = "LspDiagnosticsUnderlineHint" },
+    DiagnosticFloatingHint = { link = "LspDiagnosticsFloatingHint" },
+    DiagnosticSignHint = { link = "LspDiagnosticsSignHint" },
+  }
+  return lsp
+end
+
+theme.loadPlugins = function()
+  local plugins = {
+    TelescopePromptBorder = { fg = aylin.aylin_turquoise },
+    TelescopeResultsBorder = { fg = aylin.aylin_l_sky },
+    TelescopePreviewBorder = { fg = aylin.aylin_green },
+    TelescopeSelectionCaret = { fg = aylin.aylin_aubergine },
+    TelescopeSelection = { fg = aylin.aylin_marzipan },
+    TelescopeMatching = { fg = aylin.aylin_sky },
+
+    -- NvimTree
+    NvimTreeRootFolder = { fg = aylin.aylin_l_sky, style = "bold" },
+    NvimTreeGitDirty = { fg = aylin.aylin_purple },
+    NvimTreeGitNew = { fg = aylin.aylin_green },
+    NvimTreeImageFile = { fg = aylin.aylin_purple },
+    NvimTreeExecFile = { fg = aylin.aylin_green },
+    NvimTreeSpecialFile = { fg = aylin.aylin_sky, style = "underline" },
+    NvimTreeFolderName = { fg = aylin.aylin_sap },
+    NvimTreeEmptyFolderName = { fg = aylin.aylin_black },
+    NvimTreeFolderIcon = { fg = aylin.aylin_l_white },
+    NvimTreeIndentMarker = { fg = aylin.aylin_black },
+    LspDiagnosticsError = { fg = aylin.aylin_pink },
+    LspDiagnosticsWarning = { fg = aylin.aylin_purple },
+    LspDiagnosticsInformation = { fg = aylin.aylin_turquoise },
+    LspDiagnosticsHint = { fg = aylin.aylin_l_sky },
+
+    CmpItemKind = { fg = aylin.aylin_purple },
+    CmpItemAbbrMatch = { fg = aylin.aylin_l_white, style = "bold" },
+    CmpItemAbbrMatchFuzzy = { fg = aylin.aylin_l_white, style = "bold" },
+    CmpItemAbbr = { fg = aylin.aylin_l_white },
+    CmpItemMenu = { fg = aylin.aylin_marzipan },
+
+    DiagnosticError = { fg = aylin.aylin_pink },
+    DiagnosticWarning = { fg = aylin.aylin_purple },
+    DiagnosticInformation = { fg = aylin.aylin_aubergine},
+    DiagnosticHint = { fg = aylin.aylin_marzipan },
+    DiagnosticTruncateLine = { fg = aylin.aylin_l_sky },
+    LspFloatWinNormal = { bg = aylin.aylin_black },
+    LspFloatWinBorder = { fg = aylin.aylin_l_sky },
+    LspSagaBorderTitle = { fg = aylin.aylin_turquoise },
+    LspSagaHoverBorder = { fg = aylin.aylin_l_sky },
+    LspSagaRenameBorder = { fg = aylin.aylin_green },
+    LspSagaDefPreviewBorder = { fg = aylin.aylin_green },
+    LspSagaCodeActionBorder = { fg = aylin.aylin_sky },
+    LspSagaFinderSelection = { fg = aylin.aylin_green },
+    LspSagaCodeActionTitle = { fg = aylin.aylin_turquoise },
+    LspSagaCodeActionContent = { fg = aylin.aylin_turquoise },
+    LspSagaSignatureHelpBorder = { fg = aylin.aylin_sap },
+    ReferencesCount = { fg = aylin.aylin_turquoise },
+    DefinitionCount = { fg = aylin.aylin_turquoise },
+    DefinitionIcon = { fg = aylin.aylin_l_sky },
+    ReferencesIcon = { fg = aylin.aylin_l_sky },
+    TargetWord = { fg = aylin.aylin_turquoise },
+  }
+  return plugins
+end
+
+return theme
